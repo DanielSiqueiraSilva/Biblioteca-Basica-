@@ -1,6 +1,6 @@
 user = {}
 
-def cadastro(): ASDSDSDSDA    
+def cadastro(): 
     print("\nBem-vindo ao cadastro de usuários!")
     
     email = input("Digite o seu e-mail: ")
