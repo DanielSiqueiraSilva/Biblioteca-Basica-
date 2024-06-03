@@ -13,8 +13,6 @@ def cadastro():
     except ValueError as ve:
         print(ve)
         
-cadastro()
-
 #------------------------------------------------------------------------------------------- 
 def login(user):
     print("\nBem-vindo ao sistema de login!")
@@ -32,7 +30,7 @@ def login(user):
         return False
         
 user = {"exemplo@email.com": "senha123"}
-login(user)
+
 
 #------------------------------------------------------------------------------------------- 
 def removerUser():
