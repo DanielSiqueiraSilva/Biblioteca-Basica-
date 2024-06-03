@@ -19,17 +19,22 @@ cadastro()
 #------------------------------------------------------------------------------------------- 
 def login(user):
     print("\nBem-vindo ao sistema de login!")
-    
-    email = input("Digite o seu e-mail: ")
-    senha = input("Digite a sua senha: ")
-    
-    if email in user and user[email] == senha:
-        print("Login realizado com sucesso!")
-        return True
-    
-    else:
-        print("login invalido")
+    try:
+        email = input("Digite o seu e-mail: ")
+        senha = input("Digite a sua senha: ")
+
+        if email in user and user[email] == senha:
+            print("Login realizado com sucesso!")
+            return True
+        else:
+            raise ValueError("Email ou senha inválidos.")
+    except ValueError as ve:
+        print(ve)
         return False
+
+# Exemplo de uso
+user = {"exemplo@email.com": "senha123"}
+login(user)
 
 #------------------------------------------------------------------------------------------- 
 def removerUser():
