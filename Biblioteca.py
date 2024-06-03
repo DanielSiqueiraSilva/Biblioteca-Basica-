@@ -16,7 +16,7 @@ def cadastro():
         user[email] = senha    
         print("Cadastro realizado com sucesso!")
     except ValueError as ve:
-        print("ERRO: ",{ve})
+        print("ERRO: ", {ve})
 #------------------------------------------------------------------------------------------- 
 def login(user):
     print("\nBem-vindo ao sistema de login!")
