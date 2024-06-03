@@ -2,12 +2,19 @@ user = {}
 
 def cadastro(): 
     print("\nBem-vindo ao cadastro de usuários!")
-    
-    email = input("Digite o seu e-mail: ")
-    senha = input("Digite uma senha: ")
+    try:
+        email = input("Digite o seu e-mail: ")
+        if email in user:
+            raise ValueError("Este e-mail já está cadastrado.")
+        senha = input("Digite uma senha: ")
+        
+        user[email] = senha    
+        print("Cadastro realizado com sucesso!")
+    except ValueError as ve:
+        print(ve)
 
-    user[email] = senha    
-    print("Cadastro realizado com sucesso!")
+# Exemplo de uso
+cadastro()
 
 #------------------------------------------------------------------------------------------- 
 def login(user):
