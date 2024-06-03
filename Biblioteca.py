@@ -39,11 +39,11 @@ def removerUser():
 
     email = input("Digite o email do usuário que deseja remover: ")
 
-    if email in user:
+    try:
         del user[email]
         print(f"Usuário com email '{email}' foi removido com sucesso!")
-    else:
-        print(f"Não foi encontrado usuário com esse email '{email}'")
+    except KeyError:
+        print(f"ERRO: Não foi encontrado usuário com esse email '{email}'")
 
 #------------------------------------------------------------------------------------------- 
 def listarUser():
