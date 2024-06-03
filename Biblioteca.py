@@ -60,21 +60,6 @@ def listarUser():
 livros = {}
 
 def cadastroLivros():
-    try:
-        with open("livros.txt", "r") as arquivo:
-            for linha in arquivo:
-                dados = linha.strip().split(";")
-                titulo = dados[0]
-                autor = dados[1]
-                ano = dados[2]
-                livros[titulo] = {
-                    "autor": autor,
-                    "ano": ano
-                }
-    except FileNotFoundError:
-        print("Arquivo de livros não encontrado.")
-    except IndexError:
-        print("Formato do arquivo inválido.")
 
     while True:
         print("\n Menu livros:")
@@ -95,12 +80,6 @@ def cadastroLivros():
                 "autor": autor,
                 "ano": ano
             }
-            
-            try:
-                with open("livros.txt", "a") as arquivo:
-                    arquivo.write(f"{titulo};{autor};{ano}\n")
-            except IOError:
-                print("Erro ao gravar o arquivo de livros.")
             
             print(f"Livro '{titulo}' cadastrado com sucesso!")
         
@@ -136,6 +115,7 @@ def cadastroLivros():
             
 #------------------------------------------------------------------------------------------- 
 def gerenciarColaboradores():
+
     while True:
         print("\nMenu Colaborador:")
         print("------------------")
@@ -149,8 +129,10 @@ def gerenciarColaboradores():
             cadastro() 
         elif escolha == "2":
             removerUser()
+
         elif escolha == "3":
             listarUser()
+            
         elif escolha == "4":
             menuPrincipal()
         else:
@@ -168,15 +150,19 @@ def menuPrincipal():
 
         if escolha == "1":
             gerenciarColaboradores()
+
         elif escolha == "2":
             cadastroLivros()
+         
         elif escolha == "3":
             break
+
         else:
             print("Opção inválida. Tente novamente.")
 #-------------------------------------------------------------------------------------------  
 def main():
     while True:
+        print(colored("COMO USAR: APERTE A OPÇÃO UM PARA INSERIR SEU LOGIN JÁ CADASTRADO OPÇÃO 2 PARA NOVOS USUÁRIOS", 'blue', attrs=['bold']))
         print("\nBem vindo a Biblioteca:")
         print("------------------")
         print("1. Login")
@@ -187,10 +173,14 @@ def main():
         if escolha =="1":
             if login(user):
                 menuPrincipal()
+
         elif escolha == "2":
             cadastro()
+
         else:
             print("Opção inaválida")
+
+    
 
 if __name__ == "__main__":
     main()
