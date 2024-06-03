@@ -4,15 +4,19 @@ def cadastro():
     print("\nBem-vindo ao cadastro de usuários!")
     try:
         email = input("Digite o seu e-mail: ")
+        
+        if not email.endswith('@gmail.com') and not email.endswith('@hotmail.com'):
+            raise ValueError("O email deve terminar com '@gmail.com' ou '@hotmail.com'.")
+        
         if email in user:
             raise ValueError("Este e-mail já está cadastrado.")
+        
         senha = input("Digite uma senha: ")
         
         user[email] = senha    
         print("Cadastro realizado com sucesso!")
     except ValueError as ve:
         print(ve)
-        
 #------------------------------------------------------------------------------------------- 
 def login(user):
     print("\nBem-vindo ao sistema de login!")
@@ -28,9 +32,6 @@ def login(user):
     except ValueError as ve:
         print(ve)
         return False
-        
-user = {"exemplo@email.com": "senha123"}
-
 
 #------------------------------------------------------------------------------------------- 
 def removerUser():
