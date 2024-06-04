@@ -49,12 +49,14 @@ def removerUser():
 def listarUser():
     print("\nLista de usuários cadastrados:")
 
-    if not user:
-        print("Não há usuários cadastrados no sistema.")
-    else:
-        for email in user:
-            print(f"userario = {email}")
-
+    try:
+        if not user:
+            print("Não há usuários cadastrados no sistema.")
+        else:
+            for email in user:
+                print(f"Usuário = {email}")
+    except NameError:
+        print("Não foi possível listar os usuários. Não apresenta usuários cadastrados!")
 #------------------------------------------------------------------------------------------- 
 livros = {}
 
