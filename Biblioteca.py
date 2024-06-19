@@ -163,7 +163,7 @@ def menuPrincipal():
 #-------------------------------------------------------------------------------------------  
 def main():
     while True:
-        print(colored("COMO USAR: APERTE A OPÇÃO UM PARA INSERIR SEU LOGIN JÁ CADASTRADO OPÇÃO 2 PARA NOVOS USUÁRIOS", 'blue', attrs=['bold']))
+        print(colored("COMO USAR: APERTE A OPÇÃO UM PARA INSERIR SEU LOGIN JÁ CADASTRADO OPÇÃO 2 PARA NOVOS USUÁRIOS")
         print("\nBem vindo a Biblioteca:")
         print("------------------")
         print("1. Login")
